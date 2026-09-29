@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Official Bolodelizia | Premium Makaroni Bolognese</title>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Supabase JS Client (CDN) -->
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+
+        <link rel="stylesheet" href="style.css">
+
+</head>
+<body>
+
+
+    <!-- Header -->
+    <header>
+        <div class="logo">official_<span>bolodelizia</span></div>
+        <nav>
+            <ul>
+                <li><a href="#home">Beranda</a></li>
+                <li><a href="#about">Tentang</a></li>
+                <li><a href="#product">Menu</a></li>
+            </ul>
+        </nav>
+        <a href="#order" class="btn-nav">Pesan</a>
+        <div class="menu-toggle">☰</div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <h1>Makaroni Bolognese <br><span>Premium</span> Taste</h1>
+            <p>Nikmati sensasi makaroni lembut dengan saus bolognese autentik yang kaya rempah. Camilan kekinian yang bikin nagih.</p>
+            <a href="#order" class="btn-cta">Pesan Sekarang</a>
+        </div>
+    </section>
+
+    <!-- Features -->
+    <section id="about" class="features">
+        <div class="section-title">
+            <h2>Kenapa Kami?</h2>
+            <span></span>
+        </div>
+        <div class="feature-grid">
+            <div class="feature-card">
+                <div class="icon-box">🍝</div>
+                <h3>Bahan Berkualitas</h3>
+                <p>Menggunakan makaroni premium impor dan daging segar pilihan untuk saus bolognese terbaik.</p>
+            </div>
+            <div class="feature-card">
+                <div class="icon-box">🚀</div>
+                <h3>Pengiriman Cepat</h3>
+                <p>Pesan hari ini, kami kirim segera. Pesanan tetap hangat dan fresh sampai di tangan Anda.</p>
+            </div>
+            <div class="feature-card">
+                <div class="icon-box">❤️</div>
+                <h3>Resep Rahasia</h3>
+                <p>Perpaduan bumbu rempah rahasia keluarga yang menciptakan cita rasa otentik Italia.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Product -->
+    <section id="product" class="product">
+        <div class="product-container">
+            <div class="product-img">
+                <!-- Placeholder image for Bolognese Pasta -->
+                <img src="testi.jpeg" alt="Makaroni Bolognese Bolodelizia">
+            </div>
+            <div class="product-info">
+                <h3>Signature Makaroni Bolognese</h3>
+                <p>Makaroni yang dipanggang sempurna dengan lapisan saus daging bolognese yang melimpah dan keju mozzarella lumer. Cocok untuk makan siang, makan malam, atau camilan seru.</p>
+                <br>
+                <div class="ingredients">
+                    <span class="badge">Premium Pasta</span>
+                    <span class="badge">Beef Mince</span>
+                    <span class="badge">Tomato Sauce</span>
+                    <span class="badge">Mozzarella</span>
+                </div>
+                <span class="price-tag">Rp 10.000 / porsi</span>
+                <a href="#order" class="btn-cta" style="font-size: 1rem;">Saya Mau Pesan!</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Order Form -->
+    <section id="order" class="order-section">
+        <div class="section-title">
+            <h2>Formulir Pemesanan</h2>
+            <span></span>
+            <p style="margin-top:15px; color: var(--gray);">Isi data di bawah, pesanan otomatis tercatat & terkirim ke WA Admin.</p>
+        </div>
+        
+        <div class="form-container">
+            <form id="orderForm">
+                <div class="form-group">
+                    <label for="name">Nama Lengkap</label>
+                    <input type="text" id="name" placeholder="Contoh: Budi Santoso" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="whatsapp">Nomor WhatsApp</label>
+                    <input type="tel" id="whatsapp" placeholder="Contoh: 08123456789" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="address">Alamat Pengiriman</label>
+                    <textarea id="address" rows="3" placeholder="Jl. Mawar No. 10, Jakarta..." required></textarea>
+                </div>
+
+                <div class="form-group">
+                    <label for="quantity">Jumlah Porsi</label>
+                    <input type="number" id="quantity" min="1" value="1" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="notes">Catatan Tambahan (Opsional)</label>
+                    <textarea id="notes" rows="2" placeholder="Contoh: Pedas, jangan pakai bawang, dll."></textarea>
+                </div>
+
+
+                <div class="payment-box">
+                    <h3>💳 Metode Pembayaran</h3>
+                    <div class="payment-options">
+                        <label class="payment-option active">
+                            <input type="radio" name="payment" value="QRIS" checked>
+                            <span class="payment-logo">▦</span>
+                            <strong>QRIS</strong>
+                        </label>
+                        <label class="payment-option">
+                            <input type="radio" name="payment" value="DANA">
+                            <span class="payment-logo">💙</span>
+                            <strong>DANA</strong>
+                        </label>
+                        <label class="payment-option">
+                            <input type="radio" name="payment" value="GoPay">
+                            <span class="payment-logo">💚</span>
+                            <strong>GoPay</strong>
+                        </label>
+                    </div>
+
+                    <div class="total-box">
+                        <span>Total Pembayaran</span>
+                        <strong id="totalPrice">Rp 35.000</strong>
+                    </div>
+
+                    <div id="qrisArea">
+                        <strong>QRIS Pembayaran</strong>
+                        <p style="font-size:.85rem;">Nominal mengikuti total pesanan.</p>
+                        <img src="https://api.qrserver.com/v1/create-qr-code/?size=220x220&data=QRIS-BOLODELIZIA-DEMO" alt="QRIS Bolodelizia">
+                        <div><strong id="qrisAmount">Rp 10.000</strong></div>
+                        <small>QR di atas adalah contoh/demo. Untuk pembayaran nyata, hubungkan ke payment gateway QRIS.</small>
+                    </div>
+
+                    <div class="ewallet-instruction" id="ewalletInstruction">
+                        E-wallet dipilih. Saat sistem pembayaran asli sudah terhubung, nominal pembayaran akan otomatis mengikuti total pesanan.
+                    </div>
+                    <p class="payment-note">Harga otomatis berubah sesuai jumlah porsi yang dipilih.</p>
+                </div>
+
+                <button type="submit" class="btn-submit" id="submitBtn">Kirim Pesanan</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-logo">official_<span>bolodelizia</span></div>
+        <div class="social-links">
+            <a href="#">Instagram</a>
+            <a href="#">TikTok</a>
+            <a href="#">Facebook</a>
+        </div>
+        <p style="color: var(--gray); font-size: 0.8rem;">&copy; 2023 Bolodelizia. All rights reserved.</p>
+    </footer>
+
+    <!-- Notification Toast -->
+    <div id="notification">Pesanan berhasil dikirim!</div>
+
+    <script>
+        // --- KONFIGURASI SUPABASE & WHATSAPP ---
+        
+        // GANTI DENGAN URL DAN KEY DARI DASHBOARD SUPABASE ANDA
+        const SUPABASE_URL = 'YOUR_SUPABASE_URL'; 
+        const SUPABASE_ANON_KEY = 'YOUR_SUPABASE_ANON_KEY';
+        
+        // GANTI DENGAN NOMOR WA ADMIN (Format: 628...)
+        const ADMIN_WA = '6281234567890'; 
+
+        // Inisialisasi Supabase
+        let supabase;
+        
+        try {
+            if (SUPABASE_URL === 'YOUR_SUPABASE_URL' || !SUPABASE_URL) {
+                console.warn('Supabase belum dikonfigurasi. Mode Demo (hanya WhatsApp).');
+            } else {
+                supabase = window.supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
+            }
+        } catch (error) {
+            console.error('Gagal inisialisasi Supabase:', error);
+        }
+
+        // --- LOGIKA FORMULIR ---
+
+        const orderForm = document.getElementById('orderForm');
+        const submitBtn = document.getElementById('submitBtn');
+        const notification = document.getElementById('notification');
+
+        const UNIT_PRICE = 35000;
+        const quantityInput = document.getElementById('quantity');
+        const totalPrice = document.getElementById('totalPrice');
+        const qrisAmount = document.getElementById('qrisAmount');
+        const qrisArea = document.getElementById('qrisArea');
+        const ewalletInstruction = document.getElementById('ewalletInstruction');
+        const paymentOptions = document.querySelectorAll('.payment-option');
+
+        function formatRupiah(value) {
+            return 'Rp ' + Number(value).toLocaleString('id-ID');
+        }
+
+        function updateTotal() {
+            const qty = Math.max(1, parseInt(quantityInput.value) || 1);
+            quantityInput.value = qty;
+            const total = UNIT_PRICE * qty;
+            totalPrice.innerText = formatRupiah(total);
+            qrisAmount.innerText = formatRupiah(total);
+        }
+
+        quantityInput.addEventListener('input', updateTotal);
+
+        paymentOptions.forEach(option => {
+            option.addEventListener('click', () => {
+                paymentOptions.forEach(item => item.classList.remove('active'));
+                option.classList.add('active');
+
+                const method = option.querySelector('input').value;
+                if (method === 'QRIS') {
+                    qrisArea.classList.add('show');
+                    ewalletInstruction.classList.remove('show');
+                } else {
+                    qrisArea.classList.remove('show');
+                    ewalletInstruction.classList.add('show');
+                }
+            });
+        });
+
+        updateTotal();
+
+        orderForm.addEventListener('submit', async function(e) {
+            e.preventDefault();
+
+            const name = document.getElementById('name').value.trim();
+            const whatsapp = document.getElementById('whatsapp').value.trim();
+            const address = document.getElementById('address').value.trim();
+            const quantity = Math.max(1, parseInt(quantityInput.value) || 1);
+            const notes = document.getElementById('notes').value.trim();
+            const paymentMethod = document.querySelector('input[name="payment"]:checked').value;
+            const total = UNIT_PRICE * quantity;
+
+            submitBtn.innerText = 'Memproses...';
+            submitBtn.disabled = true;
+
+            if (supabase) {
+                try {
+                    const { data, error } = await supabase
+                        .from('orders')
+                        .insert([{
+                            customer_name: name,
+                            whatsapp_number: whatsapp,
+                            address: address,
+                            quantity: quantity,
+                            notes: notes
+                        }]);
+
+                    if (error) throw error;
+                    console.log('Data saved to Supabase:', data);
+                } catch (error) {
+                    console.error('Error saving to Supabase:', error);
+                    alert('Data server gagal disimpan, tetapi pesanan tetap dilanjutkan ke WhatsApp.');
+                }
+            }
+
+            const text = `Halo Admin Bolodelizia, saya mau pesan:%0A%0A` +
+                         `👤 Nama: ${encodeURIComponent(name)}%0A` +
+                         `📞 WA: ${encodeURIComponent(whatsapp)}%0A` +
+                         `📍 Alamat: ${encodeURIComponent(address)}%0A` +
+                         `🍝 Pesanan: Makaroni Bolognese x${quantity}%0A` +
+                         `💰 Harga: ${encodeURIComponent(formatRupiah(total))}%0A` +
+                         `💳 Pembayaran: ${encodeURIComponent(paymentMethod)}%0A` +
+                         `📝 Catatan: ${encodeURIComponent(notes || '-')}%0A%0A` +
+                         `Mohon diproses ya! Terima kasih.`;
+
+            const waLink = `https://wa.me/${ADMIN_WA}?text=${text}`;
+
+            showNotification(`Total ${formatRupiah(total)} • Mengalihkan ke WhatsApp...`);
+
+            setTimeout(() => {
+                window.open(waLink, '_blank');
+                orderForm.reset();
+                updateTotal();
+
+                paymentOptions.forEach(item => item.classList.remove('active'));
+                document.querySelector('.payment-option').classList.add('active');
+                qrisArea.classList.add('show');
+                ewalletInstruction.classList.remove('show');
+
+                submitBtn.innerText = 'Kirim Pesanan';
+                submitBtn.disabled = false;
+            }, 1200);
+        });
+
+        function showNotification(message) {
+            notification.innerText = message;
+            notification.classList.add('show');
+            setTimeout(() => {
+                notification.classList.remove('show');
+            }, 3000);
+        }
+
+
+        // --- INTERAKSI UI SEDERHANA ---
+        
+        // Smooth scrolling untuk link navigasi
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+
+        // Mobile menu toggle
+        const menuToggle = document.querySelector('.menu-toggle');
+        const nav = document.querySelector('nav ul');
+
+        menuToggle.addEventListener('click', () => {
+            if (nav.style.display === 'flex') {
+                nav.style.display = 'none';
+            } else {
+                nav.style.display = 'flex';
+                nav.style.flexDirection = 'column';
+                nav.style.position = 'absolute';
+                nav.style.top = '70px';
+                nav.style.left = '0';
+                nav.style.width = '100%';
+                nav.style.background = 'var(--dark-surface)';
+                nav.style.padding = '20px';
+                nav.style.textAlign = 'center';
+            }
+        });
+    </script>
+</body>
+</html>
